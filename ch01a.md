@@ -172,7 +172,7 @@ exam_objectives:
 
 
 
-**10. The correct answers are A and B.**
+**10. The correct answers are (A and B) and (C and D).**
 
 **Explanation:**
 
@@ -183,10 +183,8 @@ In Java, a method signature consists of the method name and the parameter list. 
   - The above options have the same method signature (`update(int, String)`) because they both have the same method name and parameter list (an `int` and a `String`, in that order). The difference in parameter names (`id` vs. `identifier` and `value` vs. `data`) does not affect the method signature.
 
 - **C)** `public boolean update(String value, int id)` 
-  - This option does not have the same signature as A or B because the parameter list is different.
-
 - **D)** `void update(String value, int id)`
-  - This option has a different method signature (`update(String, int)`) because the order of the parameters is reversed compared to A and B.
+  - This option has the same method signature (`update(String, int)`) as C because they both have the same method name and parameter list (a `String` and an `int`, in that order). The different access modifier and return type does not affect the method signature.
 
 - **E)** `protected void update(int id, int value) throws IOException`
   - This option also has a different parameter list (`update(int, int)`).
