@@ -7,6 +7,5 @@ vendor
 
 # quiz app (Vite + Svelte)
 quiz/node_modules
-quiz/dist
 quiz/src/generated/
 
