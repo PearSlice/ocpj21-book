@@ -1,0 +1,38 @@
+name: Publish Quiz to GitHub Pages
+
+on:
+  push:
+    tags:
+      - 'publish'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout ocpj21-book
+        uses: actions/checkout@v4
+        with:
+          path: ocpj21-book
+
+      - name: Checkout pearslice.github.io
+        uses: actions/checkout@v4
+        with:
+          repository: PearSlice/pearslice.github.io
+          token: ${{ secrets.PAGES_DEPLOY_TOKEN }}
+          path: pearslice.github.io
+
+      - name: Copy quiz/dist to pearslice.github.io/ocpj21-quiz
+        run: |
+          rm -rf pearslice.github.io/ocpj21-quiz
+          cp -r ocpj21-book/quiz/dist pearslice.github.io/ocpj21-quiz
+
+      - name: Commit and push
+        run: |
+          cd pearslice.github.io
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ocpj21-quiz/
+          git diff --cached --quiet && echo "No changes to publish" && exit 0
+          git commit -m "chore: publish ocpj21-quiz from ocpj21-book@$(cd ../ocpj21-book && git rev-parse --short HEAD)"
+          git push
