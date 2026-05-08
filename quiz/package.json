@@ -1,0 +1,26 @@
+{
+  "name": "ocpj21-quiz",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "build:questions": "tsx scripts/build-questions.ts",
+    "dev": "npm run build:questions && vite",
+    "build": "npm run build:questions && vite build",
+    "preview": "vite preview",
+    "check": "svelte-check --tsconfig ./tsconfig.json"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^3.1.2",
+    "@tsconfig/svelte": "^5.0.4",
+    "@types/node": "^25.6.2",
+    "highlight.js": "^11.10.0",
+    "marked": "^14.1.3",
+    "marked-highlight": "^2.1.4",
+    "svelte": "^4.2.19",
+    "svelte-check": "^4.0.4",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.2",
+    "vite": "^5.4.8"
+  }
+}

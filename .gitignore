@@ -4,3 +4,9 @@ _site
 .jekyll-metadata
 vendor
 .DS_Store
+
+# quiz app (Vite + Svelte)
+quiz/node_modules
+quiz/dist
+quiz/src/generated/
+
